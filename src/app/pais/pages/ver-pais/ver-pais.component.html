@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-12 animate__animated animate__jackInTheBox">
-            <h1>Pais: <small>{{pais.name}}</small></h1>
+            <h1>Pais: <small>{{pais.name}} - {{pais.capital}}</small></h1>
 
         </div>
         <div class="row">
@@ -27,9 +27,13 @@
                     <li class="list-group-item">
                         <strong>Codigo Alpha3: </strong> {{pais.alpha3Code}}
                     </li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
+                    <li class="list-group-item">
+                        <strong *ngFor="let spell of pais.altSpellings"> - {{spell}} -</strong>
+                    </li>
+                    <li class="list-group-item">
+                        Moneda: <strong *ngFor="let currency of pais.currencies">{{currency.name}} -> {{currency.symbol}}</strong>
+                    </li>
+                    <li class="list-group-item">Territorio: <strong>{{pais.area | number}}</strong> km2</li>
                 </ul>
             </div>
 
